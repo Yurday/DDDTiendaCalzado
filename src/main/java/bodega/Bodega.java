@@ -3,7 +3,6 @@ package bodega;
 import bodega.values.BodegaId;
 import bodega.values.NombreBodega;
 import co.com.sofka.domain.generic.AggregateEvent;
-import empleado.values.Funciones;
 
 import java.util.Set;
 
