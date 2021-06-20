@@ -4,6 +4,6 @@ import co.com.sofka.domain.generic.DomainEvent;
 
 public class EmailDeUnContactoCambiado extends DomainEvent {
     public EmailDeUnContactoCambiado(){
-        super("sofka.empleado.emaildeuncontactocambiado");
+        super("tiendadecalzado.empleado.emaildeuncontactocambiado");
     }
 }

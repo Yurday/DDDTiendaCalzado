@@ -4,6 +4,6 @@ import co.com.sofka.domain.generic.DomainEvent;
 
 public class MarcaDeTenisActualizada extends DomainEvent {
     public MarcaDeTenisActualizada(){
-        super("sofka.stock.marcadetenisactualizada");
+        super("tiendadecalzado.stock.marcadetenisactualizada");
     }
 }

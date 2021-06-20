@@ -4,6 +4,6 @@ import co.com.sofka.domain.generic.DomainEvent;
 
 public class CapacidadDeUnaBodegaCambiada extends DomainEvent {
     public CapacidadDeUnaBodegaCambiada (){
-        super ("sofka.bodega.capacidaddeunabodegacambiada");
+        super ("tiendadecalzado.bodega.capacidaddeunabodegacambiada");
     }
 }

@@ -4,6 +4,6 @@ import co.com.sofka.domain.generic.DomainEvent;
 
 public class NoDeCelularDeUnContactoCambiado extends DomainEvent {
     public NoDeCelularDeUnContactoCambiado(){
-        super("sofka.empleado.nodecelulardeuncontactocambiado");
+        super("tiendadecalzado.empleado.nodecelulardeuncontactocambiado");
     }
 }
