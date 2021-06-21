@@ -1,18 +1,19 @@
 package bodega.events;
 
 import bodega.values.Capacidad;
+import bodega.values.Dimensiones;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class DimensionesDeInformacionBodegaCambiada extends DomainEvent {
 
-    private final Capacidad capacidad;
+    private final Dimensiones dimensiones;
 
-    public DimensionesDeInformacionBodegaCambiada(Capacidad capacidad){
-        super ("tiendadecalzado.bodega.capacidaddeunabodegacambiada");
-        this.capacidad = capacidad;
+    public DimensionesDeInformacionBodegaCambiada(Dimensiones dimensiones){
+        super ("tiendadecalzado.bodega.dimensionesdeinformacionbodegacambiada");
+        this.dimensiones = dimensiones;
     }
 
-    public Capacidad getCapacidad() {
-        return capacidad;
+    public Dimensiones getDimensiones() {
+        return dimensiones;
     }
 }

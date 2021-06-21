@@ -8,7 +8,7 @@ public class CapacidadDeInformacionBodegaCambiada extends DomainEvent {
     private final Capacidad capacidad;
 
     public CapacidadDeInformacionBodegaCambiada(Capacidad capacidad){
-        super ("tiendadecalzado.bodega.capacidaddeunabodegacambiada");
+        super ("tiendadecalzado.bodega.capacidaddeinformacionbodegacambiada");
         this.capacidad = capacidad;
     }
 

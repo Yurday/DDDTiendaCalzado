@@ -1,23 +1,24 @@
 package bodega.commands;
 
 import bodega.values.BodegaId;
+import bodega.values.Direccion;
 import co.com.sofka.domain.generic.Command;
 
 public class CambiarDireccionDeUbicacionBodega implements Command {
 
     private final BodegaId bodegaId;
-    private final Ubicacion ubicacion;
+    private final Direccion direccion;
 
-public CambiarDireccionDeUbicacionBodega(BodegaId bodegaId, Ubicacion ubicacion){
+public CambiarDireccionDeUbicacionBodega(BodegaId bodegaId, Direccion direccion){
     this.bodegaId = bodegaId;
-    this.ubicacion = ubicacion;
+    this.direccion = direccion;
 }
 
     public BodegaId getBodegaId() {
         return bodegaId;
     }
 
-    public Ubicacion getUbicacion() {
-        return ubicacion;
+    public Direccion getDireccion() {
+        return direccion;
     }
 }

@@ -2,23 +2,24 @@ package bodega.commands;
 
 import bodega.values.BodegaId;
 import bodega.values.Capacidad;
+import bodega.values.Dimensiones;
 import co.com.sofka.domain.generic.Command;
 
 public class CambiarDimensionesDeInformacionBodega implements Command {
 
     private final BodegaId bodegaId;
-    private final Capacidad capacidad;
+    private final Dimensiones dimensiones;
 
-    public CambiarDimensionesDeInformacionBodega(BodegaId bodegaId, Capacidad capacidad){
+    public CambiarDimensionesDeInformacionBodega(BodegaId bodegaId, Dimensiones dimensiones){
         this.bodegaId = bodegaId;
-        this.capacidad = capacidad;
+        this.dimensiones = dimensiones;
     }
 
     public BodegaId getBodegaId() {
         return bodegaId;
     }
 
-    public Capacidad getCapacidad() {
-        return capacidad;
+    public Dimensiones getDimensiones() {
+        return dimensiones;
     }
 }

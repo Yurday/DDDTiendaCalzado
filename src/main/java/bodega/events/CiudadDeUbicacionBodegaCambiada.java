@@ -1,17 +1,18 @@
 package bodega.events;
 
+import bodega.values.Ciudad;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class CiudadDeUbicacionBodegaCambiada extends DomainEvent {
 
-    private final Ubicacion ubicacion;
+    private final Ciudad ciudad;
 
-    public CiudadDeUbicacionBodegaCambiada(Ubicacion ubicacion){
-        super("tiendadecalzado.bodega.ubicaciondeunabodegacambiada");
-        this.ubicacion = ubicacion;
+    public CiudadDeUbicacionBodegaCambiada(Ciudad ciudad){
+        super("tiendadecalzado.bodega.ciudaddeubicacionbodegacambiada");
+        this.ciudad = ciudad;
     }
 
-    public Ubicacion getUbicacion() {
-        return ubicacion;
+    public Ciudad getCiudad() {
+        return ciudad;
     }
 }

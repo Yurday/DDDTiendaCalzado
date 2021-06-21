@@ -2,23 +2,24 @@ package bodega.commands;
 
 import bodega.values.BodegaId;
 import bodega.values.Capacidad;
+import bodega.values.NombreBodega;
 import co.com.sofka.domain.generic.Command;
 
 public class CambiarNombreBodega implements Command {
 
     private final BodegaId bodegaId;
-    private final Capacidad capacidad;
+    private final NombreBodega nombreBodega;
 
-    public CambiarNombreBodega(BodegaId bodegaId, Capacidad capacidad){
+    public CambiarNombreBodega(BodegaId bodegaId, NombreBodega nombreBodega){
         this.bodegaId = bodegaId;
-        this.capacidad = capacidad;
+        this.nombreBodega = nombreBodega;
     }
 
     public BodegaId getBodegaId() {
         return bodegaId;
     }
 
-    public Capacidad getCapacidad() {
-        return capacidad;
+    public NombreBodega getNombreBodega() {
+        return nombreBodega;
     }
 }

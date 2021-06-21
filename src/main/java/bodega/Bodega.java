@@ -1,25 +1,23 @@
 package bodega;
 
-import bodega.events.BodegaAgregada;
-import bodega.values.BodegaId;
-import bodega.values.Capacidad;
-import bodega.values.NombreBodega;
+import bodega.entities.InformacionBodega;
+import bodega.entities.UbicacionBodega;
+import bodega.events.*;
+import bodega.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
-import java.util.Set;
 
 public class Bodega extends AggregateEvent <BodegaId> {
 
     protected NombreBodega nombreBodega;
-    protected Set<Bodega> bodega;
-    protected Bodega1 bodega1;
-    protected Bodega2 bodega2;
+    protected InformacionBodega informacionBodega;
+    protected UbicacionBodega ubicacionBodega;
 
-    public Bodega(BodegaId bodegaId, NombreBodega nombreBodega){
+    public Bodega(BodegaId bodegaId, NombreBodega nombreBodega, InformacionBodega informacionBodega, UbicacionBodega ubicacionBodega){
         super(bodegaId);
-        appendChange(new BodegaAgregada(bodegaId, nombreBodega)).apply();
+        appendChange(new BodegaAgregada(bodegaId, nombreBodega, informacionBodega, ubicacionBodega)).apply();
     }
 
     private Bodega(BodegaId bodegaId){
@@ -36,35 +34,37 @@ public class Bodega extends AggregateEvent <BodegaId> {
 
     //Commands
 
-    public void modificarCantDeBodegas (CantBodegas cantBodegas){
-        appendChange(new CantDeBodegasModificada(cantBodegas)).apply();
+    public void cambiarCapacidadDeInformacionBodega (Capacidad capacidad){
+        appendChange(new CapacidadDeInformacionBodegaCambiada(capacidad)).apply();
     }
 
-    public void agregarBodega (Bodega bodega){
-        appendChange(new BodegaAgregada(bodega)).apply();
+    public void cambiarCiudadDeUbicacionBodega (Ciudad ciudad){
+        appendChange(new CiudadDeUbicacionBodegaCambiada(ciudad)).apply();
     }
 
-    public void agregarBodega (Bodega bodega){
-        appendChange(new BodegaAgregada(bodega)).apply();
+    public void cambiarDimensionesDeInformacionBodega (Dimensiones dimensiones){
+        appendChange(new DimensionesDeInformacionBodegaCambiada(dimensiones)).apply();
     }
 
-    public void cambiarCapacidadDeUnaBodega (Capacidad capacidad){
-        appendChange(new CantDeBodegasModificada(capacidad)).apply();
+    public void cambiarDireccionDeUbicacionBodega (Direccion direccion){
+        appendChange(new DireccionDeUbicacionBodegaCambiada(direccion)).apply();
+
     }
 
-    public NombreBodega nombreBodega() {
+    public void cambiarNombreBodega(NombreBodega nombreBodega){
+        appendChange(new NombreDeBodegaCambiado(nombreBodega)).apply();
+
+    }
+
+    public NombreBodega getNombreBodega() {
         return nombreBodega;
     }
 
-    public Set<Bodega> bodega() {
-        return bodega;
+    public InformacionBodega getInformacionBodega() {
+        return informacionBodega;
     }
 
-    public Bodega1 bodega1() {
-        return bodega1;
-    }
-
-    public Bodega2 bodega2() {
-        return bodega2;
+    public UbicacionBodega getUbicacionBodega() {
+        return ubicacionBodega;
     }
 }
