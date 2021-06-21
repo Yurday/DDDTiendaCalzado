@@ -4,14 +4,14 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class CantBodegas implements ValueObject <String> {
+public class Direccion implements ValueObject <String> {
 
     private final String value;
 
-    public CantBodegas(String value) {
+    public Direccion(String value) {
         this.value = Objects.requireNonNull(value);
         if (this.value.isBlank()){
-            throw new IllegalArgumentException("Cantidad de bodegas no referenciado");
+            throw new IllegalArgumentException("Capacidad de la bodega sin mencionars");
         }
     }
 
