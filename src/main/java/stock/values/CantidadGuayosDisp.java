@@ -4,14 +4,14 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Marca implements ValueObject<String> {
+public class CantidadGuayosDisp implements ValueObject<String> {
 
     private final String value;
 
-    public Marca(String value) {
+    public CantidadGuayosDisp(String value) {
         this.value = Objects.requireNonNull(value);
         if (this.value.isBlank()){
-            throw new IllegalArgumentException("Marca no relacionada");
+            throw new IllegalArgumentException("Cantidad de guayos disponible sin establecer");
         }
     }
 

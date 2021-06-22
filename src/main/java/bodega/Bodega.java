@@ -6,7 +6,6 @@ import bodega.events.*;
 import bodega.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-
 import java.util.List;
 
 public class Bodega extends AggregateEvent <BodegaId> {

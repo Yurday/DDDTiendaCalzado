@@ -1,6 +1,5 @@
 package bodega.events;
 
-import bodega.values.Capacidad;
 import bodega.values.NombreBodega;
 import co.com.sofka.domain.generic.DomainEvent;
 

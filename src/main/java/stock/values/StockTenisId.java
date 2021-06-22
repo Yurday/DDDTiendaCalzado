@@ -1,6 +1,5 @@
 package stock.values;
 
-import bodega.values.BodegaId;
 import co.com.sofka.domain.generic.Identity;
 
 public class StockTenisId extends Identity {

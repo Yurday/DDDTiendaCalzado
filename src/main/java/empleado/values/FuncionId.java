@@ -1,6 +1,5 @@
 package empleado.values;
 
-import bodega.values.BodegaId;
 import co.com.sofka.domain.generic.Identity;
 
 public class FuncionId extends Identity {

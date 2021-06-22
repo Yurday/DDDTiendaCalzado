@@ -1,7 +1,6 @@
 package bodega.commands;
 
 import bodega.values.BodegaId;
-import bodega.values.Capacidad;
 import bodega.values.NombreBodega;
 import co.com.sofka.domain.generic.Command;
 

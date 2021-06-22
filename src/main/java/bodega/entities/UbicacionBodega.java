@@ -22,11 +22,11 @@ public class UbicacionBodega extends Entity <UbicacionBodegaId> {
         this.ciudad = ciudad;
     }
 
-    public Direccion getDireccion() {
+    public Direccion direccion() {
         return direccion;
     }
 
-    public Ciudad getCiudad() {
+    public Ciudad ciudad() {
         return ciudad;
     }
 }

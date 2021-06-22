@@ -22,11 +22,11 @@ public class InformacionBodega extends Entity <InformacionBodegaId> {
         this.dimensiones = dimensiones;
     }
 
-    public Capacidad getCapacidad() {
+    public Capacidad capacidad() {
         return capacidad;
     }
 
-    public Dimensiones getDimensiones() {
+    public Dimensiones dimensiones() {
         return dimensiones;
     }
 }

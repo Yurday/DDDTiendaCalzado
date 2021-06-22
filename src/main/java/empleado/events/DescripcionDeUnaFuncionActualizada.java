@@ -2,7 +2,6 @@ package empleado.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import empleado.values.Descripcion;
-import empleado.values.FuncionId;
 
 public class DescripcionDeUnaFuncionActualizada extends DomainEvent {
 

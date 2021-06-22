@@ -18,6 +18,11 @@ public class Empleado extends AggregateEvent <EmpleadoId> {
         appendChange(new EmpleadoCreado(empleadoId, nombre, funcion, contacto)).apply();
     }
 
+    private Empleado(EmpleadoId empleadoId){
+        super(empleadoId);
+        subscribe(new EmpleadoChange(this));
+    }
+
     //Commands
 
     public void actualizarCaracteristicaDeUnaFuncion(Caracteristica caracteristica) {
