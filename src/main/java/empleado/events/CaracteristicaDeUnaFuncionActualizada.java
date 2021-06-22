@@ -5,7 +5,15 @@ import empleado.values.Caracteristica;
 import empleado.values.FuncionId;
 
 public class CaracteristicaDeUnaFuncionActualizada extends DomainEvent {
-    public CaracteristicaDeUnaFuncionActualizada(FuncionId entityId, Caracteristica caracteristica){
+
+    private final Caracteristica caracteristica;
+
+    public CaracteristicaDeUnaFuncionActualizada(Caracteristica caracteristica){
         super("tiendadecalzado.empleado.caracteristicadeunafuncionactualizada");
+        this.caracteristica = caracteristica;
+    }
+
+    public Caracteristica getCaracteristica() {
+        return caracteristica;
     }
 }

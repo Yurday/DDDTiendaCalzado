@@ -1,49 +1,62 @@
 package empleado;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import empleado.entities.Contacto;
 import empleado.entities.Funcion;
 import empleado.events.*;
 import empleado.values.*;
 import stock.values.StockId;
 
-import java.util.Objects;
-import java.util.Set;
-
-public class Empleado extends AggregateEvent <EmpleadoId>{
+public class Empleado extends AggregateEvent <EmpleadoId> {
     protected Nombre nombre;
-    protected Set<Funcion> funciones;
+    protected Funcion funcion;
     protected StockId stockId;
-    protected ContactoId contactoId;
+    protected Contacto contacto;
 
-    public Empleado (EmpleadoId entityId, Nombre nombre){
-        super (entityId);
-        appendChange(new EmpleadoCreado(nombre)).apply();
+    public Empleado(EmpleadoId empleadoId, Nombre nombre, Funcion funcion, Contacto contacto) {
+        super(empleadoId);
+        appendChange(new EmpleadoCreado(empleadoId, nombre, funcion, contacto)).apply();
     }
 
-    public void agregarFuncion (FuncionId entityId, Caracteristica caracteristica, Descripcion descripcion){
-        Objects.requireNonNull(entityId);
-        Objects.requireNonNull(caracteristica);
-        Objects.requireNonNull(descripcion);
-        appendChange(new FuncionAgregada (entityId, caracteristica, descripcion)).apply();
+    //Commands
+
+    public void actualizarCaracteristicaDeUnaFuncion(Caracteristica caracteristica) {
+        appendChange(new CaracteristicaDeUnaFuncionActualizada(caracteristica)).apply();
     }
 
-    public void cambiarNombre (Nombre nombre){
+    public void actualizarDescripcionDeUnaFuncion(Descripcion descripcion) {
+        appendChange(new DescripcionDeUnaFuncionActualizada(descripcion)).apply();
+    }
+
+    public void cambiarDocIdentidad(DocIdentidad docIdentidad) {
+        appendChange(new DocIdentidadCambiado(docIdentidad)).apply();
+    }
+
+    public void cambiarEmailDeUnContacto(Email email) {
+        appendChange(new EmailDeUnContactoCambiado(email)).apply();
+    }
+
+    public void cambiarNoDeCelularDeUnContacto(NoCelular noCelular) {
+        appendChange(new NoDeCelularDeUnContactoCambiado(noCelular)).apply();
+    }
+
+    public void CambiarNombre(Nombre nombre) {
         appendChange(new NombreCambiado(nombre)).apply();
-
     }
 
-    public void actualizarCaracteristicaDeUnaFuncion(FuncionId entityId, Caracteristica caracteristica){
-        appendChange(new CaracteristicaDeUnaFuncionActualizada(entityId, caracteristica)).apply();
+    public Nombre getNombre() {
+        return nombre;
     }
 
-    public void actualizarDescripcionDeUnaFuncion(FuncionId entityId, Descripcion descripcion){
-        appendChange(new DescripcionDeUnaFuncionActualizada(entityId, descripcion)).apply();
+    public Funcion getFuncion() {
+        return funcion;
     }
 
-    /*public void cambiarDocIdentidad(DocIdentidad docIdentidad){
-        appendChange(new )
-    }*/
+    public Contacto getContacto() {
+        return contacto;
+    }
 
-
-    //public void cambiarNombre
+    public StockId getStockId() {
+        return stockId;
+    }
 }
